@@ -6,7 +6,7 @@ spec:
   volumes:
   - name: pvol   # same
     persistentVolumeClaim:
-      claimName: pvc   # e namwsamehona chahiye  pvc.yml ke name se
+      claimName: pvc   # e name same hona chahiye  pvc.yml ke name se
   containers:
   - image: nginx
     name: cont-one
