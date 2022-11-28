@@ -3,11 +3,11 @@ kind: PersistentVolume
 metadata:
   name: pv
 spec:
-  accessModes:
+  accessModes:       # mtlb koi 1 node hi read write krskti
   - ReadWriteOnce
   capacity:
     storage: 100M
-  hostPath:
+  hostPath:        # nodepe
     path: /tmp/pv
   storageClassName: abc
   persistentVolumeReclaimPolicy: Delete  # can be Recycle or Retain (retain is default)
