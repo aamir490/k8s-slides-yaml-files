@@ -6,7 +6,7 @@ metadata:
     app: myapp
 spec:
   volumes:
-  - name: share-dir
+  - name: share-dir          # SAME
     emptyDir: {}
   containers:
   - name: container-one
@@ -17,7 +17,7 @@ spec:
     command: ["sh"]
     args: ["-c","while true; do date >> /var/cont-one/mylog.txt; sleep 5; done"]
     volumeMounts:
-    - name: share-dir
+    - name: share-dir            # SAME 
       mountPath: /var/cont-one
   - name: container-two
     image: nginx
