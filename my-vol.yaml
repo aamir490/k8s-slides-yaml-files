@@ -6,7 +6,7 @@ metadata:
     app: myapp
 spec:
   volumes:
-  - name: share-dir
+  - name: share-dir        # same name in VOLUMEMOUNTS
     emptyDir: {}
   containers:
   - name: container-one
@@ -16,8 +16,8 @@ spec:
     imagePullPolicy: IfNotPresent
     command: ["sh"]
     args: ["-c","while true; do date >> /var/cont-one/mylog.txt; sleep 5; done"]
-    volumeMounts:
-    - name: share-dir
+    volumeMounts:     
+    - name: share-dir           # same name in VOLUME
       mountPath: /var/cont-one
   - name: container-two
     image: nginx
