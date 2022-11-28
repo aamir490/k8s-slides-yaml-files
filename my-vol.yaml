@@ -18,13 +18,13 @@ spec:
     args: ["-c","while true; do date >> /var/cont-one/mylog.txt; sleep 5; done"]
     volumeMounts:
     - name: share-dir            # SAME 
-      mountPath: /var/cont-one
+      mountPath: /var/cont-one    # THIS FOLDE RREFER TO EMPTY DIRECTORY
   - name: container-two
     image: nginx
     ports:
     - containerPort: 80
     imagePullPolicy: IfNotPresent
     volumeMounts:
-    - name: share-dir
-      mountPath: /var/cont-two
+    - name: share-dir          # SAME
+      mountPath: /var/cont-two    # YE PATH EMPTY DIREC KO REFER HOGA
   restartPolicy: Never
