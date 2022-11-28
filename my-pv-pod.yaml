@@ -4,14 +4,14 @@ metadata:
   name: pod-pv
 spec:
   volumes:
-  - name: pvol
+  - name: pvol   # same
     persistentVolumeClaim:
-      claimName: pvc
+      claimName: pvc   # e namwsamehona chahiye  pvc.yml ke name se
   containers:
   - image: nginx
     name: cont-one
     volumeMounts:
-    - name: pvol
+    - name: pvol   # same
       mountPath: /tmp/pv
     imagePullPolicy: IfNotPresent
   restartPolicy: Never
